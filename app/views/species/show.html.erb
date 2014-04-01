@@ -1,0 +1,8 @@
+<h2> <%= @current_species.name %></h2>
+
+<p><li><a href="/species/<%= @current_species.id %>/edit">Edit this species</a></li></p>
+<p><li><a href="/species/<%= @current_species.id %>"
+      data-confirm="Are you sure?"
+      data-method="delete"
+      rel="nofollow">Delete</a></li></p>
+<p><li><a href="/species">Return to Main Menu</a></li></p>
