@@ -12,7 +12,7 @@ class SpeciesController < ApplicationController
 
   def create
     Species.create(params[:species])
-    redirect_to '/'
+    redirect_to '/species'
   end
 
   def edit
@@ -23,12 +23,12 @@ class SpeciesController < ApplicationController
   def update
     @current_species = Species.find(params[:id])
     @current_species.update(params[:species])
-    redirect_to '/'
+    redirect_to '/species'
   end
 
   def delete
     @current_species = Species.find(params[:id])
     @current_species.destroy
-    redirect_to '/'
+    redirect_to '/species'
   end
 end

@@ -4,7 +4,7 @@
 
 -Done- Start out by letting users CRUD/L (create, read, update, destroy, list) species.
 
-Next, allow them to input a sighting of an animal, along with the date, time, and location. (Hint: a species has many sightings.) Add CRUD functionality for these sightings.
+-Done- Next, allow them to input a sighting of an animal, along with the date, time, and location. (Hint: a species has many sightings.) Add CRUD functionality for these sightings.
 
 - Now, the area under consideration has been divided into several regions. Build out CRUD/L functionality for regions, and when a user reports a sighting, have them choose the region from a drop-down menu. (Hint: do a web search for html drop-down mdn.)
 

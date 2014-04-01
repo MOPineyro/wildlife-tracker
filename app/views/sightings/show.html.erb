@@ -1,0 +1,15 @@
+<h2>Sighting Details for Sighting @ <%= @sighting.location %></h2>
+
+<div>
+  <p>Location: <%= @sighting.location %></p>
+  <p>Date: <%= @sighting.date %><p>
+  <p>Time: <%= @sighting.time.strftime("%I:%M %p") %><p>
+  <p>Species: <%= @sighting.species.name %><p>
+</div>
+
+<p><li><a href="/sightings/<%= @sighting.id %>/edit">Edit this sighting</a></li></p>
+<p><li><a href="/sightings/<%= @sighting.id %>"
+      data-confirm="Are you sure?"
+      data-method="delete"
+      rel="nofollow">Delete</a></li></p>
+<p><li><a href="/sightings">Return to sightings menu</a></li></p>

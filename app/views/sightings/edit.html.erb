@@ -1,0 +1,23 @@
+<form action="/sightings/<%= @sighting.id %>"  method="post">
+    <input name="_method" type="hidden" value="patch">
+    <label for="sighting_location">Sighting Location:</label>
+    <input id="sighting_location" name="sighting[location]" type="text" value="<%= @sighting.location %>">
+    <label for="sighting_species_id">Species Sighted:</label>
+    <select id='sighting_species_id' name="sighting[species_id]" value="<%= @sighting.species_id %>">
+      <% Species.all.each do |species| %>
+        <% if @sighting.species.id == species.id %>
+            <option value="<%= species.id.to_i %>" selected="<%= @sighting.species_id %>"><%= species.name %></option>
+        <% else %>
+            <option value="<%= species.id.to_i %>"><%= species.name %></option>
+        <% end %>
+      <% end %>
+    </select>
+    <br>
+    <label for="sighting_date">Sighting Date:</label>
+    <input id="sighting_date" type="date" name="sighting[date]" value="<%= @sighting.date %>">
+    <label for="sighting_date">Sighting Time:</label>
+    <span style="color:red"><%= @sighting.time.strftime("%I:%M%p") %></span>
+    <input id="sighting_time" type="time" name="sighting[time]" value="<%= @sighting.time.strftime("%I:%M%p") %>">
+
+    <button>Edit Sighting</button>
+</form>

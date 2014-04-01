@@ -1,0 +1,30 @@
+<html>
+  <head>
+    <title>Sightings</title>
+  </head>
+  <body>
+    <h1>Sightings List:</h1>
+    <ul>
+      <% @sightings.each do |sighting| %>
+        <li><a href="/sightings/<%= sighting.id %>"><%= sighting.location %></a></li>
+        <% end %>
+    </ul>
+    <form action="/sightings" method="post">
+        <label for="sighting_location">Sighting Location:</label>
+        <input id="sighting_location" name="sighting[location]" type="text">
+        <label for="sighting_species_id">Species Sighted:</label>
+        <select id='sighting_species_id' name="sighting[species_id]">
+          <% Species.all.each do |species| %>
+            <option value="<%= species.id.to_i %>"><%= species.name %></option>
+          <% end %>
+        </select>
+        <br>
+        <label for="sighting_date">Sighting Date:</label>
+        <input id="sighting_date" type="date" name="sighting[date]">
+        <label for="sighting_date">Sighting Time:</label>
+        <input id="sighting_time" type="time" name="sighting[time]">
+
+        <button>Add Sighting</button>
+    </form>
+  </body>
+</html>
