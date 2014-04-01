@@ -1,0 +1,43 @@
+<head>
+  <style type="text/css">
+  ul#sighting_location:before
+  {
+    content: "Location:";
+    font-size: 30px;
+  }
+  ul#sighting_location:before
+  {
+    content: "Location:";
+    font-size: 30px;
+  }
+  #pull-right {
+    position: left
+  }
+  #pull-left {
+    position: right;
+  }
+  </style>
+</head>
+
+<h2><%= @region.name %></h2>
+
+<div id="region_info">
+  <% @region.sightings.each do |sighting| %>
+    <div id="pull-left">
+      <ul id="sighting_location"><li><%= sighting.location %></li></ul>
+    </div>
+    <div id="pull-right">
+      <ul id="sighting_species"><li><%= sighting.species.name %></li></ul>
+    </div>
+  <% end %>
+</div>
+<footer>
+<p><li><a href="/regions/<%= @region.id %>/edit">Edit this region</a></li></p>
+<p><li><a href="/regions/<%= @region.id %>"
+      data-confirm="Are you sure?"
+      data-method="delete"
+      rel="nofollow">Delete</a></li></p>
+<p><li><a href="/regions">Return to Main Menu</a></li></p>
+</footer>
+
+

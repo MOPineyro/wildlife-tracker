@@ -10,6 +10,12 @@
         <% end %>
     </ul>
     <form action="/sightings" method="post">
+        <label for="sighting_region_id">Region:</label>
+        <select id='sighting_region_id' name="sighting[region_id]">
+          <% Region.all.each do |region| %>
+            <option value="<%= region.id.to_i %>"><%= region.name %></option>
+          <% end %>
+        </select>
         <label for="sighting_location">Sighting Location:</label>
         <input id="sighting_location" name="sighting[location]" type="text">
         <label for="sighting_species_id">Species Sighted:</label>

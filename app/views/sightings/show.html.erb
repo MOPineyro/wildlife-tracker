@@ -1,6 +1,7 @@
 <h2>Sighting Details for Sighting @ <%= @sighting.location %></h2>
 
-<div>
+<div style="background-color: lightblue; padding-left: 10px;">
+  <p>Region: <%= @sighting.region.name %><p>
   <p>Location: <%= @sighting.location %></p>
   <p>Date: <%= @sighting.date %><p>
   <p>Time: <%= @sighting.time.strftime("%I:%M %p") %><p>
