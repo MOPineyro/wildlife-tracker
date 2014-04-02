@@ -1,36 +1,93 @@
-<html>
-  <head>
-    <title>Sightings</title>
-  </head>
-  <body>
-    <h1>Sightings List:</h1>
-    <ul>
-      <% @sightings.each do |sighting| %>
-        <li><a href="/sightings/<%= sighting.id %>"><%= sighting.location %></a></li>
-        <% end %>
-    </ul>
-    <form action="/sightings" method="post">
-        <label for="sighting_region_id">Region:</label>
-        <select id='sighting_region_id' name="sighting[region_id]">
-          <% Region.all.each do |region| %>
-            <option value="<%= region.id.to_i %>"><%= region.name %></option>
-          <% end %>
-        </select>
-        <label for="sighting_location">Sighting Location:</label>
-        <input id="sighting_location" name="sighting[location]" type="text">
-        <label for="sighting_species_id">Species Sighted:</label>
-        <select id='sighting_species_id' name="sighting[species_id]">
-          <% Species.all.each do |species| %>
-            <option value="<%= species.id.to_i %>"><%= species.name %></option>
-          <% end %>
-        </select>
-        <br>
-        <label for="sighting_date">Sighting Date:</label>
-        <input id="sighting_date" type="date" name="sighting[date]">
-        <label for="sighting_date">Sighting Time:</label>
-        <input id="sighting_time" type="time" name="sighting[time]">
+<title>Sightings</title>
+<div class="row">
+  <div class="large-12 columns">
+    <h3>Sightings</h3>
+  </div>
+</div>
+    <div class="row">
+      <div class="large-12 columns">
+        <div class="large-2 columns">&nbsp;</div>
+        <table class="sightings">
+          <thead>
+            <tr>
+              <th>Sighting Region</th>
+              <th>Animal Sighted</th>
+              <th>Sighting Location</th>
+              <th>Sighting Date</th>
+              <th>Sighting Time</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @sightings.each do |sighting| %>
+            <tr>
+              <td>
+               <a href="/sightings/<%= sighting.id %>"><%= sighting.region.name %></a>
+              </td>
+              <td>
+               <a href="/sightings/<%= sighting.id %>"><%= sighting.species.name %></a>
+              </td>
+              <td>
+               <a href="/sightings/<%= sighting.id %>"><%= sighting.location %></a>
+              </td>
+              <td>
+               <a href="/sightings/<%= sighting.id %>"><%= sighting.date %></a>
+              </td>
+              <td>
+               <a href="/sightings/<%= sighting.id %>"><%= sighting.time.strftime("%I:%M %p") %></a>
+              </td>
+            </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  <div class="row">
+    <div class="large-12 columns">
+      <form action="/sightings" method="post">
+        <div class="row">
+          <div class="large-6 columns">
+            <label for="sighting_region_id">Region:
+              <select id='sighting_region_id' name="sighting[region_id]">
+                <option value="" disabled selected>Select Region</option>
+                <% Region.all.each do |region| %>
+                  <option value="<%= region.id.to_i %>"><%= region.name %></option>
+                <% end %>
+              </select>
+            </label>
+          </div>
+          <div class="large-6 columns">
+            <label for="sighting_location">Sighting Location:
+              <input id="sighting_location" name="sighting[location]" type="text" placeholder="Location">
+            </label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="large-4 columns">
+            <label for="sighting_species_id">Animal Sighted:
+              <select id='sighting_species_id' name="sighting[species_id]">
+                  <option value="" disabled selected>Select Animal</option>
+                  <% Species.all.each do |species| %>
+                    <option value="<%= species.id.to_i %>"><%= species.name %></option>
+                  <% end %>
+                </select>
+            </label>
+          </div>
+          <div class="large-4 columns">
+            <label for="sighting_date">Date Sighted:
+              <input id="sighting_date" type="date" name="sighting[date]">
+            </label>
+          </div>
+          <div class="large-4 columns">
+            <label for="sighting_time">Time Sighted:
+              <input id="sighting_time" type="time" name="sighting[time]">
+            </label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="large-12 columns"><button class="button success">Add Sighting</button></div>
+        </div>
+      </form>
 
-        <button>Add Sighting</button>
-    </form>
-  </body>
-</html>
+    </div>
+</div>
+
