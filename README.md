@@ -1,6 +1,6 @@
-# Wildlife tracker
+## Wildlife tracker
 
-### The Forest Service is considering a proposal from a timber company to clear-cut an old-growth forest of virgin redwood just outside of Portland.Before they give the go-ahead, they need to do an environmental impact study. They've asked you and your pair to build an app so that the rangers can report wildlife sightings.
+##### The Forest Service is considering a proposal from a timber company to clear-cut an old-growth forest of virgin redwood just outside of Portland.Before they give the go-ahead, they need to do an environmental impact study. They've asked you and your pair to build an app so that the rangers can report wildlife sightings.
 
 -Done- Start out by letting users CRUD/L (create, read, update, destroy, list) species.
 
@@ -12,6 +12,13 @@
 
 - TODO : fix header & logo
 
+- TODO : Fix layout issues.
+
 - TODO : Add vector map of us on home page for region selection with [JQVMAP gem](https://github.com/acrogenesis/jqvmap-rails).
 
 - TODO : Add animal sightings twitter integration.
+
+- TODO : Make it a bigfoot sighting/news page.
+      - Saquatch Sightings forum.
+      - Sasquatch Sightings shopping cart.
+
