@@ -6,8 +6,12 @@ class SightingsController < ApplicationController
   end
 
   def create
-    @sighting = Sighting.create(params[:sighting])
-    redirect_to '/sightings'
+    @sighting = Sighting.new(params[:sighting])
+    if @sighting.save
+      redirect_to '/sightings'
+    else
+      redirect_to '/sightings'
+    end
   end
 
   def show

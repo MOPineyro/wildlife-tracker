@@ -1,0 +1,22 @@
+@import 'colors';
+
+$logo: url(image_path('tracker_logo_100x87.png'));
+
+
+.logo {
+  background-image: $logo;
+  background-color: $paper_white;
+  background-repeat: no-repeat;
+  background-position: top left;
+  height: 87px;
+  width: 100px;
+  opacity: 1.0;
+}
+
+header {
+  margin-top: 20px;
+}
+
+.inline {
+  display: inline-block;
+}

@@ -46,24 +46,31 @@
       <form action="/sightings" method="post">
         <div class="row">
           <div class="large-6 columns">
-            <label for="sighting_region_id">Region:
-              <select id='sighting_region_id' name="sighting[region_id]">
-                <option value="" disabled selected>Select Region</option>
-                <% Region.all.each do |region| %>
-                  <option value="<%= region.id.to_i %>"><%= region.name %></option>
-                <% end %>
-              </select>
-            </label>
+            <div class="">
+              <label for="sighting_region_id">Region
+                <small>Required</small>
+                <select id='sighting_region_id' name="sighting[region_id]" required>
+                  <option value="" disabled selected>Select Region</option>
+                  <% Region.all.each do |region| %>
+                    <option value="<%= region.id.to_i %>"><%= region.name %></option>
+                  <% end %>
+                </select>
+              </label>
+              <small class="error">Please select a region.</small>
+            </div>
           </div>
           <div class="large-6 columns">
-            <label for="sighting_location">Sighting Location:
-              <input id="sighting_location" name="sighting[location]" type="text" placeholder="Location">
+            <label for="sighting_location">Sighting Location
+              <small>Required</small>
+              <input id="sighting_location" name="sighting[location]" type="text" placeholder="Location" pattern="[a-zA-Z]+" required>
             </label>
+            <small class="error">Please enter a location.</small>
           </div>
         </div>
         <div class="row">
           <div class="large-4 columns">
-            <label for="sighting_species_id">Animal Sighted:
+            <label for="sighting_species_id">Animal Sighted
+              <small>Required</small>
               <select id='sighting_species_id' name="sighting[species_id]">
                   <option value="" disabled selected>Select Animal</option>
                   <% Species.all.each do |species| %>
@@ -71,23 +78,26 @@
                   <% end %>
                 </select>
             </label>
+            <small class="error">Plese enter an animal.</small>
           </div>
           <div class="large-4 columns">
-            <label for="sighting_date">Date Sighted:
+            <label for="sighting_date">Date Sighted
+              <small>Required</small>
               <input id="sighting_date" type="date" name="sighting[date]">
             </label>
+            <small class="error">Plese enter a date.</small>
           </div>
           <div class="large-4 columns">
-            <label for="sighting_time">Time Sighted:
+            <label for="sighting_time">Time Sighted
+              <small>Required</small>
               <input id="sighting_time" type="time" name="sighting[time]">
             </label>
+            <small class="error">Plese enter a time.</small>
           </div>
         </div>
         <div class="row">
-          <div class="large-12 columns"><button class="button success">Add Sighting</button></div>
+          <div class="large-12 columns"><button class="button">Add Sighting</button></div>
         </div>
       </form>
-
     </div>
 </div>
-

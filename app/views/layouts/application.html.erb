@@ -10,23 +10,28 @@
     <%= javascript_include_tag "vendor/modernizr" %>
     <%= csrf_meta_tags %>
   </head>
-    <nav class="top-bar" data-topbar>
-      <ul class="title-area">
-        <li class="name">
-          <h1><a href="#">Wildlife Tracker</a></h1>
-        </li>
-        <li class="toggle-topbar menu-icon"><a href="#">Menu</a></li>
-      </ul>
-
-      <section class="top-bar-section">
-        <ul class="left">
-          <li><a href="/species">Species</a></li>
-          <li><a href="/regions">Regions</a></li>
-          <li><a href="/sightings">Sightings</a></li>
-          <li><a href="#">About</a></li>
-        </ul>
-      </section>
-    </nav>
+  <body>
+    <header>
+      <div class="row contain-to-grid">
+          <nav class="top-bar" data-topbar>
+            <ul class="title-area inline-list">
+              <li class="logo"></li>
+              <li class="name">
+                <h1><a href="#">Wildlife Tracker</a></h1>
+              </li>
+              <li class="toggle-topbar menu-icon"><a href="#">Menu</a></li>
+            </ul>
+            <section class="top-bar-section">
+              <ul class="left">
+                <li><a href="/species">Species</a></li>
+                <li><a href="/regions">Regions</a></li>
+                <li><a href="/sightings">Sightings</a></li>
+                <li><a href="#">About</a></li>
+              </ul>
+            </section>
+          </nav>
+      </div>
+    </header>
 
     <%= yield %>
     <%= javascript_include_tag "application" %>
